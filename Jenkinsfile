@@ -17,10 +17,9 @@ pipeline {
                 echo 'Testing..'
             }
         }
-        stage('Example') {
+        stage('JenkinsEnvVars') {
             steps {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                sh 'printenv'
             }
         }
         stage('EnvironmentVars') {
