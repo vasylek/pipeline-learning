@@ -1,5 +1,7 @@
 pipeline {
-    agent maste
+    agent {
+        label "master"
+    }
     environment { 
       CC = 'clang'
     }
