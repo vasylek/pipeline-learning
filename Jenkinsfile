@@ -40,6 +40,16 @@ pipeline {
                 echo 'Deploying....'
             }
         }
+        stage('Deploy2') {
+            when {
+              expression {
+                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
+              }
+            }
+            steps {
+                sh 'echo publish'
+            }
+        }
     }
     post {
         always {
