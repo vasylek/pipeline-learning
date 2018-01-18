@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh "echo 'Testing..' && false"
+                sh "echo 'Testing..' || false"
             }
         }
         stage('JenkinsEnvVars') {
@@ -46,7 +46,7 @@ pipeline {
                 sh "echo always"
             }
             failure {
-                sh 'failure'
+                sh 'echo failure'
             }
         }
 }
