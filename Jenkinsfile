@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment { 
-        CC = 'clang'
+      CC = 'clang'
     }
     stages {
         stage('Build') {
@@ -19,7 +19,7 @@ pipeline {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
-        stage('Example') {
+        stage('Example2') {
             environment { 
                 DEBUG_FLAGS = '-g'
             }
