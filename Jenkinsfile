@@ -14,9 +14,7 @@ pipeline {
             }
         }
         stage('Test') {
-            agent {
-                label 'linux'
-            }
+            agent any
             steps {
                 sh "echo 'Testing..' || false"
             }
