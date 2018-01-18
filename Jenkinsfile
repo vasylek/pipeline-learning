@@ -17,6 +17,14 @@ pipeline {
                 echo 'Testing..'
             }
         }
+        post {
+            always {
+                sh "echo always"
+            }
+            failure {
+                sh 'failure'
+            }
+        }
         stage('JenkinsEnvVars') {
             steps {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
