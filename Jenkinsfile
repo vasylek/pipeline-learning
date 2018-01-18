@@ -22,11 +22,13 @@ pipeline {
             }
         }
         stage('JenkinsEnvVars') {
+            agent any
             steps {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
         stage('EnvironmentVars') {
+            agent any
             environment { 
                 DEBUG_FLAGS = '-g'
             }
@@ -35,16 +37,19 @@ pipeline {
             }
         }
         stage('Parameters') {
+            agent any
             steps {
                 echo "${params.Greeting} World!"
             }
         }
         stage('Deploy') {
+            agent any
             steps {
                 echo 'Deploying....'
             }
         }
         stage('Deploy2') {
+            agent any
             when {
               expression {
                 currentBuild.result == null || currentBuild.result == 'SUCCESS' 
