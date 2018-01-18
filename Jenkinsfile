@@ -3,6 +3,9 @@ pipeline {
     environment { 
       CC = 'clang'
     }
+    parameters {
+        string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
+    }
     stages {
         stage('Build') {
             steps {
@@ -20,12 +23,17 @@ pipeline {
                 sh 'printenv'
             }
         }
-        stage('Example2') {
+        stage('EnvironmentVars') {
             environment { 
                 DEBUG_FLAGS = '-g'
             }
             steps {
                 sh 'printenv'
+            }
+        }
+        stage('Parameters') {
+            steps {
+                echo "${params.Greeting} World!"
             }
         }
         stage('Deploy') {
