@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent maste
     environment { 
       CC = 'clang'
     }
