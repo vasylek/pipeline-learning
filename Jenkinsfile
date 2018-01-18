@@ -42,12 +42,18 @@ pipeline {
         }
     }
     post {
-            always {
-                sh "echo always"
-            }
-            failure {
-                sh 'echo failure'
-            }
+        always {
+            sh "echo always"
         }
+        success {
+                sh 'echo success'
+        }
+        unstable {
+                sh 'echo unstable'
+        }
+        failure {
+            sh 'echo failure'
+        }
+    }
 }
 
