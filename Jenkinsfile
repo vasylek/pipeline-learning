@@ -53,16 +53,16 @@ pipeline {
             }
             post {
                 always {
-                    sh "echo always"
+                    sh "echo always deploy"
                 }
                 success {
-                        sh 'echo success'
+                        sh 'echo success deploy'
                 }
                 unstable {
-                        sh 'echo unstable'
+                        sh 'echo unstable deploy'
                 }
                 failure {
-                    sh 'echo failure'
+                    sh 'echo failure deploy'
                 }
             }
         }
