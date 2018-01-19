@@ -51,6 +51,20 @@ pipeline {
             steps {
                 sh 'echo publish'
             }
+            post {
+                always {
+                    sh "echo always"
+                }
+                success {
+                        sh 'echo success'
+                }
+                unstable {
+                        sh 'echo unstable'
+                }
+                failure {
+                    sh 'echo failure'
+                }
+            }
         }
     }
     post {
